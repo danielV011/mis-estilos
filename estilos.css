@@ -11,8 +11,22 @@ header{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   justify-content: space-between;
+  animation: slidein 1s;
 
 }
+
+@-webkit-keyframes slidein {
+  0%{
+    margin-top: 150%;
+  }
+  60%{
+    margin-top: -5%;
+  }
+  100%{
+    margin-top: 0%;
+  }
+}
+
 
 ul{
   display: flex;
@@ -48,15 +62,30 @@ section > div{
   flex-wrap: wrap;
 }
 
-.S2 {
-  width: 65%;
-  height: 80%;
-}
-
 .S1{
   width: 65%;
   height: 80%;
 }
+.S2 {
+  width: 65%;
+  height: 80%;
+  border: solid 2px;
+  transition: transform 1s;
+}
+.S2:hover{
+  transform: rotate(10deg);
+}
+
+.S3 {
+  width: 65%;
+  height: 80%;
+  border: solid 2px;
+  transition: transform 1s;
+}
+.S3:hover{
+  transform: translate(20px,-5px);
+}
+
 #S1{
   height: 600px;
   background-color: #82c3a6;
@@ -84,12 +113,46 @@ section > div{
 footer{
   display:flex;
   background-color: #c6d5c5;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-
 }
 
 footer > div{
   width: 20%;
+}
+
+body{
+  /* width: 900px; */
+  /* margin-left: 20%; */
+  background-color: #02010a;
+}
+
+@media (max-width:900px) {
+
+  #S2{
+    flex-wrap: wrap;
+    height: auto;
+  }
+  footer{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  footer > div{
+    width: 100%;
+    justify-content: center;
+    margin-left: 25px;
+  }
+  header{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  ul {
+    width: 70%;
+    justify-content: center;
+    justify-content: space-between;
+  }
+
 }
